@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jyotishman — Full-Stack Engineer & Digital Product Architect | Hire Top Freelance Talent</title>
+  <meta name="description" content="Award-winning freelance Full-Stack Engineer & UI/UX Architect crafting high-converting web applications, bespoke SaaS platforms, and blazing fast digital experiences." />
+  <meta name="keywords" content="Freelance Web Developer, Full-Stack Engineer, React, Node.js, Next.js, UI/UX Designer, Hire Developer, SaaS Architect, Portfolio" />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Alex Rivera — Senior Full-Stack Engineer & Product Architect" />
+  <meta property="og:description" content="Transforming complex business challenges into scalable, high-converting digital products. Available for freelance contracts & MVP sprints." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Pure Vanilla Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient Background Canvas Glow -->
+  <div class="ambient-glow" id="ambientGlow"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Custom Spotlight Cursor Tracker -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Portfolio Home">
+        <div class="logo-mark">
+          <span class="logo-letter">A</span>
+          <span class="logo-dot"></span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Jyotishman</span>
+          <span class="logo-role">Full-Stack Architect</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#calculator" class="nav-link">Cost Estimator</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+           
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons & Theme Switcher -->
+      <div class="header-actions">
+        <!-- Status Indicator -->
+        <div class="availability-pill header-status">
+          <span class="pulse-dot"></span>
+          <span class="availability-text">Available for Projects</span>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button class="icon-btn theme-toggle" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary btn-sm header-cta">
+          <span>Let's Talk</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-nav-inner">
+        <div class="availability-pill mobile-status">
+          <span class="pulse-dot"></span>
+          <span>Open for Freelance & Contracts</span>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Projects & Case Studies</a></li>
+          <li><a href="#process" class="mobile-nav-link">How I Work</a></li>
+          <li><a href="#calculator" class="mobile-nav-link">Cost Calculator</a></li>
+          <li><a href="#pricing" class="mobile-nav-link">Pricing Packages</a></li>
+          <li><a href="#faq" class="mobile-nav-link">Frequently Asked Questions</a></li>
+        </ul>
+        <div class="mobile-drawer-cta">
+          <a href="#contact" class="btn btn-primary btn-full">Hire Me For Your Project</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Top Badge -->
+          <div class="hero-badge">
+            <span class="badge-sparkle">✨</span>
+            <span>Crafting High-Impact Digital Products</span>
+            <span class="badge-divider">/</span>
+            <span class="badge-highlight"> Freelancer</span>
+          </div>
+
+          <!-- Main Hero Title -->
+          <h1 class="hero-title">
+            I engineer <span class="gradient-text">high-converting</span> web apps & SaaS products that drive real revenue.
+          </h1>
+
+          <!-- Dynamic Text Subtitle -->
+          <p class="hero-description">
+            Hi, I'm <strong class="text-white">Jyotishman</strong>. A full-stack developer & UI/UX designer helping startups and established brands build bespoke web apps, high-speed landing pages, and custom software.
+          </p>
+
+          <div class="hero-specialties">
+            <span class="specialty-label">Specializing in:</span>
+            <div class="specialty-tags">
+              <span class="tag">⚡ Next.js / React</span>
+              <span class="tag">🛠️ Node & Python APIs</span>
+              <span class="tag">🎨 Luxury UI/UX Design</span>
+              <span class="tag">💳 Stripe & SaaS MVPs</span>
+            </div>
+          </div>
+
+          <!-- Hero Action CTAs -->
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-lg glow-btn">
+              <span>Start Your Project</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#calculator" class="btn btn-glass btn-lg">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="16" y1="14" x2="16" y2="18"></line>
+                <path d="M16 10h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M8 10h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M8 14h.01"></path>
+                <path d="M12 18h.01"></path>
+                <path d="M8 18h.01"></path>
+              </svg>
+              <span>Estimate Project Cost</span>
+            </a>
+          </div>
+
+          <!-- Social Proof Quick Counters -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-number" data-target="58">0+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="100">0%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="4.2" data-prefix="$" data-suffix="M+">$0M+</div>
+              <div class="stat-label">Client Value Created</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase / Interactive Developer Card -->
+        <div class="hero-visual">
+          <div class="hero-card-wrapper">
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-top-left">
+              <div class="badge-icon react-icon">⚛️</div>
+              <div class="badge-info">
+                <span class="badge-title">React / Next.js</span>
+                <span class="badge-subtitle">Ultra Fast SSR</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-icon success-icon">🚀</div>
+              <div class="badge-info">
+                <span class="badge-title">Lighthouse 100</span>
+                <span class="badge-subtitle">Core Web Vitals</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-top-right">
+              <div class="badge-icon revenue-icon">📈</div>
+              <div class="badge-info">
+                <span class="badge-title">+240% Growth</span>
+                <span class="badge-subtitle">Average Client ROI</span>
+              </div>
+            </div>
+
+            <!-- Central Glass Card Preview -->
+            <div class="code-glass-card">
+              <div class="card-header-bar">
+                <div class="window-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="card-file-title">jyotishman.config.ts</div>
+                <div class="copy-code-btn" id="copyCodeSnippetBtn" title="Copy Code">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-body-code">
+                <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span>: <span class="code-type">FreelanceArchitect</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Jyotishman"</span>,
+  <span class="code-prop">title</span>: <span class="code-string">"Full-Stack Engineer"</span>,
+  <span class="code-prop">status</span>: <span class="code-string">"🚀 Ready For New Ventures"</span>,
+  
+  <span class="code-prop">coreSkills</span>: [
+    <span class="code-string">"Full-Stack Web Apps"</span>,
+    <span class="code-string">"SaaS MVP in 3-4 Weeks"</span>,
+    <span class="code-string">"Custom API & Microservices"</span>,
+    <span class="code-string">"High-Converting UI/UX"</span>
+  ],
+  <span class="code-prop">guarantee</span>: <span class="code-string">"100% Quality & Post-Launch Support"</span>,
+  <span class="code-function">hireNow</span>: () =&gt; <span class="code-string"></span>
+};</code></pre>
+              </div>
+              <div class="card-footer-cta">
+                <div class="avatar-group">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Client Avatar 1" class="avatar-img" />
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Client Avatar 2" class="avatar-img" />
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&auto=format&fit=crop&q=80" alt="Client Avatar 3" class="avatar-img" />
+                  <div class="avatar-more">+45</div>
+                </div>
+                <div class="card-footer-text">
+                  <span class="stars">★★★★★</span>
+                  <span class="review-count">5.0 / 5.0 Rating from 45+ Clients</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- SERVICES SECTION -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">WHAT I DELIVER</span>
+          <h2 class="section-title">Specialized Freelance Services Designed for <span class="gradient-text">Maximum Impact</span></h2>
+          <p class="section-description">
+            Whether you need a brand-new SaaS built from scratch, a rapid MVP to pitch investors, or high-performance frontend engineering, I deliver turnkey solutions with enterprise quality.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card" data-service="fullstack">
+            <div class="service-card-top">
+              <div class="service-icon-box cyan-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="service-badge">Flagship</span>
+            </div>
+            <h3 class="service-title">Full-Stack Web Apps & SaaS</h3>
+            <p class="service-desc">
+              End-to-end web applications built with React/Next.js, Node/Express, PostgreSQL, and robust TypeScript architectures engineered to scale effortlessly.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> Custom Authentication, RBAC & Security</li>
+              <li><span class="check-icon">✓</span> Stripe/Paddle Subscription Billing</li>
+              <li><span class="check-icon">✓</span> RESTful & GraphQL API Architecture</li>
+              <li><span class="check-icon">✓</span> Responsive Database Design & Caching</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('Full-Stack SaaS Development')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card" data-service="uiux">
+            <div class="service-card-top">
+              <div class="service-icon-box purple-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <span class="service-badge">High Demand</span>
+            </div>
+            <h3 class="service-title">UI/UX & Product Design Systems</h3>
+            <p class="service-desc">
+              High-converting, visually breathtaking interfaces built with pixel-perfect attention to detail, design tokens, responsive typography, and micro-interactions.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> Interactive Prototypes & Wireframes</li>
+              <li><span class="check-icon">✓</span> Dark/Light Mode Design Systems</li>
+              <li><span class="check-icon">✓</span> User Journey & Conversion Rate Optimization</li>
+              <li><span class="check-icon">✓</span> Production-Ready Component Library</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('UI/UX & Product Design')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card" data-service="mvp">
+            <div class="service-card-top">
+              <div class="service-icon-box emerald-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="service-badge">Speed Sprint</span>
+            </div>
+            <h3 class="service-title">MVP Launch in 3-4 Weeks</h3>
+            <p class="service-desc">
+              Turn your startup concept into a fully operational, testable product fast. Ready for early customer acquisition, investor demos, and live revenue.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> Rapid scoping & feature prioritization</li>
+              <li><span class="check-icon">✓</span> Working core loops & onboarding flows</li>
+              <li><span class="check-icon">✓</span> Analytics, error tracking & monitoring</li>
+              <li><span class="check-icon">✓</span> Production deployment on AWS/Vercel</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('MVP Launch Sprint')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card" data-service="landing">
+            <div class="service-card-top">
+              <div class="service-icon-box orange-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Growth</span>
+            </div>
+            <h3 class="service-title">High-Speed Landing Page Engines</h3>
+            <p class="service-desc">
+              Sleek, award-winning marketing websites optimized for extreme conversion rates, 100/100 Core Web Vitals, and effortless content updates.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> Blazing fast load times (< 0.8s)</li>
+              <li><span class="check-icon">✓</span> Engaging scroll animations & 3D effects</li>
+              <li><span class="check-icon">✓</span> SEO, OpenGraph & Structured Schema</li>
+              <li><span class="check-icon">✓</span> Headless CMS or Static Generation</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('High-Converting Landing Pages')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card" data-service="ai">
+            <div class="service-card-top">
+              <div class="service-icon-box violet-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                  <path d="M12 12L2.1 12.1"></path>
+                  <path d="M12 12v9.9"></path>
+                </svg>
+              </div>
+              <span class="service-badge">Cutting-Edge</span>
+            </div>
+            <h3 class="service-title">AI & LLM Tool Integrations</h3>
+            <p class="service-desc">
+              Enhance your existing software or build new AI-native applications utilizing OpenAI, Anthropic Claude, vector databases, and custom workflow automations.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> RAG & Vector Embeddings Setup</li>
+              <li><span class="check-icon">✓</span> Streaming UI responses & AI chatbots</li>
+              <li><span class="check-icon">✓</span> Cost-optimized token caching</li>
+              <li><span class="check-icon">✓</span> Smart background queues & Webhooks</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('AI & LLM Integration')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card" data-service="audit">
+            <div class="service-card-top">
+              <div class="service-icon-box blue-glow">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <span class="service-badge">Optimization</span>
+            </div>
+            <h3 class="service-title">Code Audit & Speed Refactoring</h3>
+            <p class="service-desc">
+              Transform sluggish, legacy codebases into modern, scalable engines. We fix technical debt, security bottlenecks, and eliminate frontend lag.
+            </p>
+            <ul class="service-features-list">
+              <li><span class="check-icon">✓</span> Full architecture & security vulnerability scan</li>
+              <li><span class="check-icon">✓</span> Database query & index optimization</li>
+              <li><span class="check-icon">✓</span> Bundle size reduction by 50%+</li>
+              <li><span class="check-icon">✓</span> Actionable refactoring roadmap</li>
+            </ul>
+            <div class="service-footer">
+              <button class="service-cta-btn" onclick="openBookingModal('Code Audit & Optimization')">
+                <span>Inquire About This Service</span>
+                <span class="arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SHOWCASE -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-tag">PROVEN CASE STUDIES</span>
+            <h2 class="section-title">Selected Works That Drove <span class="gradient-text">Real Business Growth</span></h2>
+            <p class="section-description">
+              Every project is custom-engineered with clean code, scalable infrastructure, and obsessive attention to user experience.
+            </p>
+          </div>
+
+          <!-- Filter Category Pills -->
+          <div class="project-filter-buttons" role="tablist" aria-label="Filter projects">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+            <button class="filter-btn" data-filter="saas" role="tab" aria-selected="false">SaaS & Apps</button>
+            <button class="filter-btn" data-filter="ecommerce" role="tab" aria-selected="false">E-Commerce</button>
+            <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI Systems</button>
+            <button class="filter-btn" data-filter="landing" role="tab" aria-selected="false">Landing Pages</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <!-- Project 1: SaaS Cloud App -->
+          <div class="project-card" data-category="saas" data-project-id="1">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-1">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">app.auracloud.io/analytics</span>
+                  </div>
+                  <div class="mockup-content-saas">
+                    <div class="mockup-sidebar"></div>
+                    <div class="mockup-main">
+                      <div class="mockup-chart-bar">
+                        <div class="mockup-metric-card"></div>
+                        <div class="mockup-metric-card"></div>
+                        <div class="mockup-metric-card"></div>
+                      </div>
+                      <div class="mockup-big-chart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(1)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">+310% MRR Growth</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">AuraCloud Inc.</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-title">Enterprise Cloud Telemetry & Observability SaaS</h3>
+              <p class="project-summary">
+                Architected a multi-tenant cloud monitoring platform processing 5M+ daily events with sub-50ms query response times and custom billing.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Next.js 14</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">ClickHouse</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: AI Workflow Tool -->
+          <div class="project-card" data-category="ai" data-project-id="2">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-2">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">synthetix.ai/workspace</span>
+                  </div>
+                  <div class="mockup-content-ai">
+                    <div class="ai-prompt-box"></div>
+                    <div class="ai-node-tree">
+                      <div class="ai-node"></div>
+                      <div class="ai-connector"></div>
+                      <div class="ai-node"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(2)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">24,000+ Active Users</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">Synthetix AI</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-title">AI Automation Studio & Workflow Orchestration</h3>
+              <p class="project-summary">
+                Developed an intuitive visual canvas for building chained LLM agents, dynamic prompt pipelines, and automated integrations.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">React Flow</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Luxury E-Commerce -->
+          <div class="project-card" data-category="ecommerce" data-project-id="3">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-3">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">veloce-horology.store</span>
+                  </div>
+                  <div class="mockup-content-ecom">
+                    <div class="ecom-hero-banner"></div>
+                    <div class="ecom-product-cards">
+                      <div class="ecom-card"></div>
+                      <div class="ecom-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(3)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">$1.8M Revenue in Q1</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">Veloce Timepieces</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Headless Luxury Watch Storefront & Custom 3D Viewer</h3>
+              <p class="project-summary">
+                Engineered a bespoke headless e-commerce store with real-time 3D watch customizer, instant 1-click checkout, and 99/100 Core Web Vitals.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Shopify Storefront API</span>
+                <span class="tech-tag">Three.js / WebGL</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">GSAP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: High Converting Landing Page -->
+          <div class="project-card" data-category="landing" data-project-id="4">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-4">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">nexus-security.io</span>
+                  </div>
+                  <div class="mockup-content-landing">
+                    <div class="landing-headline-bar"></div>
+                    <div class="landing-badge-bar"></div>
+                    <div class="landing-demo-card"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(4)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">+185% Conversion Rate</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">Nexus Cybersecurity</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Interactive Cybersecurity Platform Showcase</h3>
+              <p class="project-summary">
+                Designed and developed an immersive interactive product launch website featuring simulated cyber defense visualizations and lead capture funnels.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Vanilla CSS3</span>
+                <span class="tech-tag">HTML5 Canvas</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">HubSpot API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Fintech Dashboard -->
+          <div class="project-card" data-category="saas" data-project-id="5">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-5">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">payforge.co/treasury</span>
+                  </div>
+                  <div class="mockup-content-fintech">
+                    <div class="fintech-wallet-card"></div>
+                    <div class="fintech-trans-list">
+                      <div class="trans-item"></div>
+                      <div class="trans-item"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(5)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">$40M+ Volume Processed</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">PayForge Global</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Cross-Border B2B Treasury & Automated FX Settlement</h3>
+              <p class="project-summary">
+                High-security banking interface with real-time multi-currency FX rate streaming, automated reconciliation, and biometric 2FA authentication.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Plaid</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: AI Content Engine -->
+          <div class="project-card" data-category="ai" data-project-id="6">
+            <div class="project-image-container">
+              <div class="project-preview-mockup project-img-6">
+                <div class="mockup-screen">
+                  <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-url">scriptify.ai/studio</span>
+                  </div>
+                  <div class="mockup-content-editor">
+                    <div class="editor-toolbar"></div>
+                    <div class="editor-body"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-hover-overlay">
+                <button class="btn btn-primary btn-sm view-case-btn" onclick="openCaseStudy(6)">
+                  <span>View Case Study</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </button>
+              </div>
+              <div class="project-stat-badge">Acquired for $3.2M</div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-client">Scriptify Creator Lab</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">AI Video Script & Viral Hook Generator</h3>
+              <p class="project-summary">
+                Built an AI writing studio with custom fine-tuned models, real-time collaboration canvas, and multi-format social export tools.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">OpenAI</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK PROCESS SECTION -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">HOW WE WORK TOGETHER</span>
+          <h2 class="section-title">A Seamless, Transparent <span class="gradient-text">5-Step Process</span></h2>
+          <p class="section-description">
+            No messy handoffs or surprise invoices. Clear milestones, weekly live demo staging links, and direct asynchronous communication.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="process-step-card">
+            <div class="step-indicator">
+              <span class="step-num">01</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <div class="step-icon-badge">🎯</div>
+              <h3 class="step-title">Discovery & Strategy Blueprint</h3>
+              <p class="step-text">
+                We align on your product vision, target audience, core technical requirements, and business KPIs. I provide a detailed architecture blueprint and fixed-scope timeline.
+              </p>
+              <div class="step-deliverable"><strong>Deliverable:</strong> Technical Spec, Architecture Diagram & Milestone Roadmap</div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card">
+            <div class="step-indicator">
+              <span class="step-num">02</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <div class="step-icon-badge">✨</div>
+              <h3 class="step-title">High-Fidelity UI/UX & Prototypes</h3>
+              <p class="step-text">
+                I design modern, intuitive user interfaces in Figma with complete component systems, interactive click-through prototypes, and micro-interaction choreography for your review.
+              </p>
+              <div class="step-deliverable"><strong>Deliverable:</strong> Interactive Figma Prototype & Design Token System</div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card">
+            <div class="step-indicator">
+              <span class="step-num">03</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <div class="step-icon-badge">⚡</div>
+              <h3 class="step-title">Agile Development & Weekly Sprints</h3>
+              <p class="step-text">
+                Production-grade coding with clean architecture, strict TypeScript types, automated tests, and continuous deployment. You get access to live private staging URLs every week.
+              </p>
+              <div class="step-deliverable"><strong>Deliverable:</strong> Weekly Staging Preview Builds + Video Walkthroughs</div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card">
+            <div class="step-indicator">
+              <span class="step-num">04</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <div class="step-icon-badge">🛡️</div>
+              <h3 class="step-title">Rigorous QA, Security & Speed Audit</h3>
+              <p class="step-text">
+                Comprehensive testing across desktop, tablet, and mobile devices. Full Lighthouse optimization for 95+ scores, SEO metadata validation, and vulnerability hardening.
+              </p>
+              <div class="step-deliverable"><strong>Deliverable:</strong> QA Test Report & 100/100 Core Web Vitals Audit</div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-step-card">
+            <div class="step-indicator">
+              <span class="step-num">05</span>
+            </div>
+            <div class="step-body">
+              <div class="step-icon-badge">🚀</div>
+              <h3 class="step-title">Launch, Handover & 30-Day Support</h3>
+              <p class="step-text">
+                Seamless production launch on your domain, full DNS setup, automated backup configurations, source code transfer, Loom video training, plus 30 days of warranty support.
+              </p>
+              <div class="step-deliverable"><strong>Deliverable:</strong> Full Repository Ownership + 30 Days Free Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PROJECT COST CALCULATOR -->
+    <section class="section calculator-section" id="calculator">
+      <div class="container">
+        <div class="calculator-wrapper">
+          <div class="calc-header text-center">
+            <span class="section-tag">INSTANT ESTIMATE</span>
+            <h2 class="section-title">Interactive Project <span class="gradient-text">Cost & Timeline Estimator</span></h2>
+            <p class="section-description">
+              Select your project parameters to get a real-time realistic estimate. Once you're happy with the scope, click "Book With This Estimate" to instantly populate your inquiry!
+            </p>
+          </div>
+
+          <div class="calc-grid">
+            <!-- Left Controls Column -->
+            <div class="calc-controls">
+              
+              <!-- 1. Project Type -->
+              <div class="calc-group">
+                <label class="calc-label">
+                  <span class="calc-step-num">1</span>
+                  <span>Select Project Type</span>
+                </label>
+                <div class="calc-options-grid" id="projectTypeOptions">
+                  <button type="button" class="calc-option-btn active" data-type="saas" data-base-price="4500" data-base-weeks="3">
+                    <span class="opt-icon">💻</span>
+                    <span class="opt-title">Full SaaS / Web App</span>
+                    <span class="opt-sub">From $4,500</span>
+                  </button>
+                  <button type="button" class="calc-option-btn" data-type="mvp" data-base-price="3200" data-base-weeks="2">
+                    <span class="opt-icon">⚡</span>
+                    <span class="opt-title">Startup MVP Sprint</span>
+                    <span class="opt-sub">From $3,200</span>
+                  </button>
+                  <button type="button" class="calc-option-btn" data-type="landing" data-base-price="1800" data-base-weeks="1">
+                    <span class="opt-icon">🎯</span>
+                    <span class="opt-title">High-Converting Landing</span>
+                    <span class="opt-sub">From $1,800</span>
+                  </button>
+                  <button type="button" class="calc-option-btn" data-type="ecommerce" data-base-price="3800" data-base-weeks="3">
+                    <span class="opt-icon">🛍️</span>
+                    <span class="opt-title">Custom E-Commerce</span>
+                    <span class="opt-sub">From $3,800</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2. Feature Add-ons -->
+              <div class="calc-group">
+                <label class="calc-label">
+                  <span class="calc-step-num">2</span>
+                  <span>Required Modules & Features</span>
+                </label>
+                <div class="calc-features-grid">
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="600" data-extra-days="3" data-name="Auth & Multi-Tenant RBAC" checked />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">User Auth & RBAC Permissions</span>
+                    <span class="feature-price">+$600</span>
+                  </label>
+
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="850" data-extra-days="4" data-name="Stripe / Subscriptions Billing" checked />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">Stripe Recurring Billing & Checkout</span>
+                    <span class="feature-price">+$850</span>
+                  </label>
+
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="1100" data-extra-days="5" data-name="AI / OpenAI API Integration" />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">AI / LLM API Integration & Prompts</span>
+                    <span class="feature-price">+$1,100</span>
+                  </label>
+
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="750" data-extra-days="3" data-name="Admin Analytics Dashboard" checked />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">Admin Analytics & Metrics Dashboard</span>
+                    <span class="feature-price">+$750</span>
+                  </label>
+
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="500" data-extra-days="2" data-name="Headless CMS Integration" />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">Headless CMS (Sanity / Strapi)</span>
+                    <span class="feature-price">+$500</span>
+                  </label>
+
+                  <label class="feature-checkbox-label">
+                    <input type="checkbox" class="calc-feature-input" data-price="650" data-extra-days="3" data-name="Custom 3D / Micro-Animations" />
+                    <span class="feature-custom-box"></span>
+                    <span class="feature-name">Custom 3D & Interactive Motion</span>
+                    <span class="feature-price">+$650</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 3. Delivery Speed -->
+              <div class="calc-group">
+                <label class="calc-label">
+                  <span class="calc-step-num">3</span>
+                  <span>Timeline Urgency</span>
+                </label>
+                <div class="timeline-slider-wrapper">
+                  <div class="timeline-tabs">
+                    <button type="button" class="timeline-pill active" data-multiplier="1.0" data-timeline-label="Standard Pace (Optimal)">Standard (4-5 weeks)</button>
+                    <button type="button" class="timeline-pill" data-multiplier="1.25" data-timeline-label="Fast-Track Express">Fast-Track (2-3 weeks)</button>
+                    <button type="button" class="timeline-pill" data-multiplier="1.5" data-timeline-label="Ultra Rush Sprint">Ultra Rush (7-10 days)</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Summary Sticky Card -->
+            <div class="calc-summary-wrapper">
+              <div class="calc-summary-card">
+                <div class="summary-badge">⚡ Real-Time Project Estimate</div>
+                
+                <div class="price-display">
+                  <div class="price-label">Estimated Investment</div>
+                  <div class="price-val-row">
+                    <span class="price-currency">$</span>
+                    <span class="price-number" id="calcTotalPrice">6,700</span>
+                    <span class="price-usd">USD</span>
+                  </div>
+                  <div class="price-note">Transparent fixed-price quote with zero surprise fees.</div>
+                </div>
+
+                <div class="summary-breakdown">
+                  <div class="breakdown-item">
+                    <span class="b-label">Selected Scope:</span>
+                    <span class="b-val" id="summaryProjectTypeName">Full SaaS / Web App</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span class="b-label">Estimated Delivery:</span>
+                    <span class="b-val" id="summaryEstimatedWeeks">3.5 - 4.5 Weeks</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span class="b-label">Included Features:</span>
+                    <span class="b-val" id="summaryFeatureCount">3 Add-ons</span>
+                  </div>
+                  <div class="breakdown-item">
+                    <span class="b-label">Post-Launch Support:</span>
+                    <span class="b-val text-emerald">30 Days Included</span>
+                  </div>
+                </div>
+
+                <div class="summary-features-tags" id="summaryFeaturesTags">
+                  <!-- Generated dynamically via JS -->
+                </div>
+
+                <div class="summary-actions">
+                  <button class="btn btn-primary btn-full" id="applyEstimateToContactBtn">
+                    <span>Lock In This Estimate & Contact</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                  <p class="summary-guarantee-note">🔒 100% Satisfaction Guarantee • NDA signed on request</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENT PRICING SECTION -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">TRANSPARENT ENGAGEMENT MODELS</span>
+          <h2 class="section-title">Predictable Pricing, <span class="gradient-text">Zero Compromises</span></h2>
+          <p class="section-description">
+            Choose the collaboration model that fits your stage, from quick turnarounds to dedicated full-stack architecture partnerships.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- Plan 1: Launch Sprint -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="plan-type">MVP & Quick Sprint</span>
+              <h3 class="plan-name">Starter Sprint</h3>
+              <p class="plan-desc">Perfect for founders validating a new concept or launching a fast conversion-focused landing page.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">2,450</span>
+                <span class="period">/ project</span>
+              </div>
+            </div>
+            <div class="plan-deliverables">
+              <div class="plan-delivery-time">⏱️ Delivery in 10-14 Business Days</div>
+              <ul class="plan-features">
+                <li><span class="check">✓</span> High-Converting Landing Page or Mini MVP</li>
+                <li><span class="check">✓</span> Responsive UI/UX in Figma + Next.js</li>
+                <li><span class="check">✓</span> 100/100 Core Web Vitals Optimization</li>
+                <li><span class="check">✓</span> Contact Form & Lead CRM Hookup</li>
+                <li><span class="check">✓</span> SEO & Structured Meta Tags</li>
+                <li><span class="check">✓</span> 14 Days Post-Launch Support</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <button class="btn btn-outline btn-full" onclick="selectPricingPlan('Starter Sprint', '$2,450')">
+                Choose Starter Sprint
+              </button>
+            </div>
+          </div>
+
+          <!-- Plan 2: Pro SaaS (Highlighted) -->
+          <div class="pricing-card featured-plan">
+            <div class="popular-ribbon">⭐ Most Requested</div>
+            <div class="pricing-card-header">
+              <span class="plan-type">Full Product Development</span>
+              <h3 class="plan-name">Pro Full-Stack SaaS</h3>
+              <p class="plan-desc">Complete end-to-end web application with authentication, database, billing, and admin management.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">5,800</span>
+                <span class="period">/ project</span>
+              </div>
+            </div>
+            <div class="plan-deliverables">
+              <div class="plan-delivery-time">⏱️ Delivery in 3-4 Weeks</div>
+              <ul class="plan-features">
+                <li><span class="check">✓</span> Everything in Starter Sprint</li>
+                <li><span class="check">✓</span> Complete User Auth, RBAC & Profile Management</li>
+                <li><span class="check">✓</span> Stripe/Paddle Recurring Subscription Engine</li>
+                <li><span class="check">✓</span> Database Architecture (PostgreSQL / Supabase)</li>
+                <li><span class="check">✓</span> Custom REST or GraphQL APIs & Webhooks</li>
+                <li><span class="check">✓</span> Comprehensive Admin Dashboard & Analytics</li>
+                <li><span class="check">✓</span> 30 Days Free Priority Support & Bug Fixes</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <button class="btn btn-primary btn-full glow-btn" onclick="selectPricingPlan('Pro Full-Stack SaaS', '$5,800')">
+                Choose Pro Full-Stack
+              </button>
+            </div>
+          </div>
+
+          <!-- Plan 3: Dedicated Retainer -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <span class="plan-type">Ongoing Dedicated Lead</span>
+              <h3 class="plan-name">Fractional CTO / Retainer</h3>
+              <p class="plan-desc">For fast-scaling teams needing a dedicated senior developer for continuous features, code reviews & scaling.</p>
+              <div class="plan-price">
+                <span class="currency">$</span>
+                <span class="amount">4,200</span>
+                <span class="period">/ month</span>
+              </div>
+            </div>
+            <div class="plan-deliverables">
+              <div class="plan-delivery-time">⏱️ 20-25 Dedicated Hours / Week</div>
+              <ul class="plan-features">
+                <li><span class="check">✓</span> Dedicated Full-Stack Engineering Capacity</li>
+                <li><span class="check">✓</span> Direct Slack / Discord Channel Integration</li>
+                <li><span class="check">✓</span> Daily Standups & Asynchronous Updates</li>
+                <li><span class="check">✓</span> Architecture Reviews & Code Refactoring</li>
+                <li><span class="check">✓</span> Priority Response Time (< 2 Hours)</li>
+                <li><span class="check">✓</span> Pause or cancel anytime with 14-day notice</li>
+              </ul>
+            </div>
+            <div class="pricing-card-footer">
+              <button class="btn btn-outline btn-full" onclick="selectPricingPlan('Fractional Retainer', '$4,200/mo')">
+                Inquire For Retainer
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">GOT QUESTIONS?</span>
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <p class="section-description">
+            Everything you need to know about working with me, payment structures, timelines, and guarantees.
+          </p>
+        </div>
+
+        <div class="faq-accordion-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is your typical turnaround time for a full project?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Turnaround depends on complexity. High-converting landing pages take <strong>7 to 10 days</strong>. Complete MVP SaaS applications generally take <strong>3 to 4 weeks</strong>. During our discovery call, we agree on an explicit schedule with milestone dates that I guarantee.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How does the payment structure work?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For fixed-price contracts, I work on a standard milestone model: <strong>50% upfront deposit</strong> to reserve your sprint on my calendar, and <strong>50% upon final sign-off</strong> and live deployment. For larger builds, we can split into 33% / 33% / 34% phases. Secure payment via Stripe, Bank Wire, or Escrow.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you sign Non-Disclosure Agreements (NDAs)?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, absolutely. I routinely sign mutual NDAs before reviewing proprietary specs, pitch decks, or sensitive customer data. Your intellectual property and code remain 100% yours.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What happens after the project launches?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>All projects include a <strong>30-day complimentary post-launch warranty</strong> covering any bug fixes, minor tweaks, and server monitoring. If you need ongoing feature additions or maintenance, you can seamlessly transition to a flexible monthly retainer.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do we communicate throughout the build?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>I prioritize clear, low-friction communication. We set up a private Slack or Discord channel for quick daily async chats, paired with weekly Loom video demos and live staging previews. You'll never have to wonder about the current status of your project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / HIRE ME SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-grid">
+            
+            <!-- Left Info Column -->
+            <div class="contact-info-col">
+              <span class="section-tag">LET'S BUILD SOMETHING GREAT</span>
+              <h2 class="contact-heading">Ready to bring your project to life?</h2>
+              <p class="contact-subtext">
+                Fill out the form with your project details, or reach out directly. I respond to all serious client inquiries within <strong>24 hours</strong> with a detailed assessment.
+              </p>
+
+              <div class="direct-contact-items">
+                <!-- Email Item with Copy Button -->
+                <div class="direct-item">
+                  <div class="item-icon">✉️</div>
+                  <div class="item-details">
+                    <span class="item-label">Direct Email</span>
+                    <a href="jyotishmansb4u@gmail.com" class="item-link" id="emailDisplay">jyotishmansb4u@gmail.com</a>
+                  </div>
+                  <button class="copy-small-btn" id="copyEmailBtn" title="Copy Email to Clipboard">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+
+                
+
+              <!-- Social Links -->
+              <div class="social-channels">
+                <span class="social-label">Find me on:</span>
+                <div class="social-icons-row">
+                 
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="X Twitter">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span>X (Twitter)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Interactive Form Column -->
+            <div class="contact-form-col">
+              <form class="contact-form" id="clientContactForm" novalidate>
+                <div class="form-title-row">
+                  <h3>Tell me about your project</h3>
+                  <span class="required-note">* Required fields</span>
+                </div>
+
+                <!-- Name & Email Row -->
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="clientName" class="form-label">Your Name *</label>
+                    <input type="text" id="clientName" name="name" class="form-input" placeholder="e.g. Jane Doe" required />
+                    <span class="form-error-msg" id="nameError">Please enter your name</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="clientEmail" class="form-label">Work Email *</label>
+                    <input type="email" id="clientEmail" name="email" class="form-input" placeholder="jane@company.com" required />
+                    <span class="form-error-msg" id="emailError">Please enter a valid email</span>
+                  </div>
+                </div>
+
+                <!-- Service Interest Dropdown / Radio -->
+                <div class="form-group">
+                  <label class="form-label">What service are you looking for?</label>
+                  <select id="serviceSelect" name="service" class="form-select">
+                    <option value="Full-Stack Web App / SaaS">Full-Stack Web App / SaaS</option>
+                    <option value="MVP Sprint (3-4 Weeks)">Startup MVP Sprint (3-4 Weeks)</option>
+                    <option value="UI/UX & Product Design">UI/UX & Product Design</option>
+                    <option value="High-Converting Landing Page">High-Converting Landing Page</option>
+                    <option value="AI & LLM Integration">AI & LLM Integration</option>
+               
+                  </select>
+                </div>
+
+                <!-- Approximate Budget Pills -->
+                <div class="form-group">
+                  <label class="form-label">Estimated Budget (USD)</label>
+                  <div class="budget-pills-row">
+                    <label class="budget-pill">
+                      <input type="radio" name="budget" value="$2k - $4k" />
+                      <span>$2k - $4k</span>
+                    </label>
+                    <label class="budget-pill">
+                      <input type="radio" name="budget" value="$4k - $8k" checked />
+                      <span>$4k - $8k</span>
+                    </label>
+                    <label class="budget-pill">
+                      <input type="radio" name="budget" value="$8k - $15k" />
+                      <span>$8k - $15k</span>
+                    </label>
+                    <label class="budget-pill">
+                      <input type="radio" name="budget" value="$15k+" />
+                      <span>$15k+</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Message / Project Details -->
+                <div class="form-group">
+                  <label for="projectMessage" class="form-label">Project Overview & Goals *</label>
+                  <textarea id="projectMessage" name="message" class="form-textarea" rows="4" placeholder="Briefly describe your project, timeline requirements, target audience, or any reference websites..." required></textarea>
+                  <span class="form-error-msg" id="messageError">Please share a brief summary of your project</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-full glow-btn submit-btn" id="submitFormBtn">
+                  <span class="btn-text">Send Project Inquiry</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <p class="form-privacy-note">
+                  🔒 Strictly confidential. I never spam or share your contact info.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-mark"><span class="logo-letter">J</span><span class="logo-dot"></span></div>
+            <span class="logo-name">Jyotishman</span>
+          </div>
+          <p class="footer-tagline">
+            Empowering innovative founders with precision software engineering, high-converting UX
+          </p>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Case Studies</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#calculator">Cost Estimator</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul>
+              <li><a href="#services">Full-Stack SaaS</a></li>
+              <li><a href="#services">MVP Rapid Sprints</a></li>
+              <li><a href="#services">UI/UX Design Systems</a></li>
+              <li><a href="#services">AI & LLM Tools</a></li>
+              <li><a href="#services">Codebase Audits</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Availability</h4>
+            <div class="footer-availability">
+              <span class="pulse-dot"></span>
+              <span>Accepting Q2/Q3 Contracts</span>
+            </div>
+            <p class="footer-sub">Typical response time: Under 24h</p>
+            <a href="#contact" class="btn btn-primary btn-sm mt-2">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          © 2026 Jyotishman. All rights reserved
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#hero" class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY MODAL DIALOG -->
+  <div class="modal-backdrop" id="caseStudyModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeCaseStudyBtn" aria-label="Close Case Study">✕</button>
+      <div class="modal-content" id="caseStudyContent">
+        <!-- Dynamic content injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDLY / INTRO CALL MODAL -->
+  <div class="modal-backdrop" id="calendlyModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card modal-medium">
+      <button class="modal-close-btn" id="closeCalendlyBtn" aria-label="Close Call Modal">✕</button>
+      <div class="modal-booking-content">
+        <div class="booking-header">
+          <span class="section-tag">FREE 15-MINUTE DISCOVERY</span>
+          <h3>Let's discuss your project vision</h3>
+          <p>Pick a simulated time slot below to lock in a consultation call with Alex Rivera.</p>
+        </div>
+        
+        <div class="booking-slots-grid">
+          <button class="time-slot-btn" onclick="confirmTimeSlot('Tomorrow at 10:00 AM PST')">
+            <span class="slot-day">Tomorrow</span>
+            <span class="slot-time">10:00 AM PST</span>
+          </button>
+          <button class="time-slot-btn" onclick="confirmTimeSlot('Tomorrow at 2:30 PM PST')">
+            <span class="slot-day">Tomorrow</span>
+            <span class="slot-time">2:30 PM PST</span>
+          </button>
+          <button class="time-slot-btn" onclick="confirmTimeSlot('Thursday at 11:00 AM PST')">
+            <span class="slot-day">Thursday</span>
+            <span class="slot-time">11:00 AM PST</span>
+          </button>
+          <button class="time-slot-btn" onclick="confirmTimeSlot('Thursday at 4:00 PM PST')">
+            <span class="slot-day">Thursday</span>
+            <span class="slot-time">4:00 PM PST</span>
+          </button>
+        </div>
+
+        <div class="booking-footer">
+          <p>Or send project details directly via the <a href="#contact" onclick="closeAllModals()">contact form</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
